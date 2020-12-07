@@ -54,7 +54,7 @@ $(document).ready(function () {
             $(`#work-${task_id}`).off('click');
             $(`#work-${task_id}`).on('click',()=>{
                 $('#form_invoice').html("");
-                $('#form_panking_list').html("");
+                $('#form_packing_list').html("");
 
                 $('#workModal').modal('show');
                 getCardData(task_id);
@@ -120,6 +120,26 @@ $(document).ready(function () {
             $('#add-task').on('click',()=>{
                 clearDataInModal();
             });
+
+            $('#add_pol_pod_btn').off('click');
+            $('#add_pol_pod_btn').on('click',()=>{
+                renderPolPod();
+            });
+
+            $('#add_fac_charge_btn').off('click');
+            $('#add_fac_charge_btn').on('click',()=>{
+                renderFacCharge();
+            });
+
+            $('#add_local_charge_btn').off();
+            $('#add_local_charge_btn').on('click',()=>{
+                renderLocalCharge();
+            });
+
+            $('#add_customs_clearance_btn').off('click');
+            $('#add_customs_clearance_btn').on('click',()=>{
+                renderCustomsClearance();
+            });
             
             $('#add_invoice').off('click');
             $('#add_invoice').on('click',()=>{
@@ -173,8 +193,108 @@ $(document).ready(function () {
                 let id = $(item).prop('id');
 
             });
+        },
+        renderPolPod : renderPolPod = (data = null)=>{
+            let html = `
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-1">
 
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">POL / POD</label>
+                            <input type="text" class="form-control" id="quo_pol_pod" placeholder="POL / POD" value='${data != null?data.pol_pod:''}'>
+                        </div>
+                        </div>
 
+                        <div class="col-xl-3 col-md-6 mb-1">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Ocean freight</label>
+                            <input type="text" class="form-control" id="quo_ocean_freight" placeholder="Ocean freight" value='${data != null?data.ocean_freight:''}'>
+                        </div>
+                        </div>
+
+                        <div class="col-xl-2 col-md-3 mb-1">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">ETD</label>
+                            <input type="text" class="form-control" id="quo_etd" placeholder="ETD" value='${data != null?data.etd:''}'>
+                        </div>
+                        </div>
+
+                        <div class="col-xl-2 col-md-3 mb-1">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Transit Time</label>
+                            <input type="text" class="form-control" id="quo_transit_time" placeholder="Transit Time" value='${data != null?data.transit_time:''}'>
+                        </div>
+                        </div>
+
+                        <div class="col-xl-2 col-md-3 mb-1">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Carrier</label>
+                            <input type="text" class="form-control" id="quo_carrier" placeholder="Carrier" value='${data != null?data.carrier:''}'>
+                        </div>
+                        </div>
+                </div>
+            `;
+            $('#pol_pod').append(html);
+        },
+        renderFacCharge : renderFacCharge = (data = null)=>{
+            let html = `
+            <div class="row">
+                <div class="col-xl-6 col-md-6 mb-1">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Name FAC</label>
+                    <input type="text" class="form-control" id="name_fac" placeholder="Name FAC" value='${data != null?data.name_fac:''}'>
+                </div>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-1">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Value FAC</label>
+                    <input type="text" class="form-control" id="value_fac" placeholder="Value FAC" value='${data != null?data.value_fac:''}'>
+                </div>
+                </div>
+            </div>
+            `;
+            $('#fac_charge').append(html);
+        },
+        renderLocalCharge : renderLocalCharge = (data = null) =>{
+            let html = `
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 mb-1">
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Name Local Charge</label>
+                            <input type="text" class="form-control" id="name_local" placeholder="Name Local Charge" value='${data != null?data.name_local:''}'>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6 col-md-6 mb-1">
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Value Local Charge</label>
+                            <input type="text" class="form-control" id="value_local" placeholder="Value Local Charge" value='${data != null?data.value_local:''}'>
+                          </div>
+                        </div>
+                    </div>
+            `;
+            $('#local_charge').append(html);
+        },
+        renderCustomsClearance : renderCustomsClearance = (data = null) =>{
+            let html = `
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 mb-1">
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Name CUSTOMS CLEARANCE</label>
+                            <input type="text" class="form-control" id="name_c_c" placeholder="Name CUSTOMS CLEARANCE" value='${data != null?data.name_customs_clearance:''}'>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6 col-md-6 mb-1">
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Value CUSTOMS CLEARANCE</label>
+                            <input type="text" class="form-control" id="value_c_c" placeholder="Value CUSTOMS CLEARANCE" value='${data != null?data.value_customs_clearance:''}'>
+                          </div>
+                        </div>
+                    </div>
+            `;
+            $('#customs_clearance').append(html);
         },
         renderPackingListDetail: renderPackingListDetail = (data = null)=>{
             let html = `

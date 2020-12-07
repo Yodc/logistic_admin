@@ -65,18 +65,11 @@
           <span>Work</span></a>
       </li>
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="request-work.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Request Work</span></a>
-      </li>
-
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="history-task.html">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>History Task</span></a>
       </li>
 
       <!-- Divider -->
@@ -307,17 +300,26 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#formInvioce">Invioce Form</a>
+                <a class="nav-link active" data-toggle="tab" href="#formInvioceCustomer">Invioce Customer Form</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#formPackingList">Packing List Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#formQuotation">Quotation Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#formInvioceAdmin">Invioce Admin Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#file">Files</a>
               </li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div id="formInvioce" class="container tab-pane active"><br>
-                <h3>Invioce Form</h3>
+              <div id="formInvioceAdmin" class="container tab-pane fade"><br>
+                <h3>Invioce (Admin) Form</h3>
                 <div class="container">
 
                   <div class="row">
@@ -325,7 +327,7 @@
                     <div class="col-xl-4 col-md-6 mb-1">
                       <div class="form-group">
                         <label for="exampleFormControlInput1">Invoice No.</label>
-                        <input id="invoice_no" type="text" class="form-control"  placeholder="Invioce No.">
+                        <input id="invoice_no" type="text" class="form-control" placeholder="Invioce No.">
                       </div>
                     </div>
 
@@ -394,6 +396,86 @@
 
                 </div>
               </div>
+
+              <div id="formInvioceCustomer" class="container tab-pane active"><br>
+                <h3>Invioce (Customer) Form</h3>
+                <div class="container">
+
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Invoice No.</label>
+                        <input id="invoice_no" type="text" class="form-control" placeholder="Invioce No.">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Date</label>
+                        <input type="date" class="form-control" id="invoice_date" placeholder="Date">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Invoice of</label>
+                        <input type="text" class="form-control" id="invoice_of" placeholder="Invoice of">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Send to</label>
+                        <input type="text" class="form-control" id="invoice_send_to" placeholder="Send to">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-8 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Address</label>
+                        <input type="text" class="form-control" id="invoice_address" placeholder="Address">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Company name</label>
+                        <input type="text" class="form-control" id="invoice_company_name" placeholder="Company name">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Ship by</label>
+                        <input type="text" class="form-control" id="invoice_ship_by" placeholder="Ship by">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">From</label>
+                        <input type="text" class="form-control" id="invoice_from" placeholder="From">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" style="display: grid;justify-content: center;margin-bottom: 10px;">
+                    <button id="add_invoice" class="btn btn-primary">Add Invoice Detail</button>
+                  </div>
+
+                  <div id="form_invoice"></div>
+
+                </div>
+              </div>
+
               <div id="formPackingList" class="container tab-pane fade"><br>
                 <h3>Packing List Form</h3>
                 <div class="container">
@@ -472,46 +554,176 @@
 
                 </div>
               </div>
+              <div id="formQuotation" class="container tab-pane fade"><br>
+                <h3>Quotation Form</h3>
+                <div class="container">
+
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Date</label>
+                        <input id="quo_date" type="date" class="form-control" placeholder="Date">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">To</label>
+                        <input type="text" class="form-control" id="quo_to" placeholder="To">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">ATTN</label>
+                        <input type="text" class="form-control" id="quo_attn" placeholder="ATTN">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Tel.</label>
+                        <input type="text" class="form-control" id="quo_tel" placeholder="Tel">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-8 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">FAX</label>
+                        <input type="text" class="form-control" id="quo_fax" placeholder="FAX">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Commodity</label>
+                        <input type="text" class="form-control" id="quo_commodity" placeholder="Commodity">
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Freight payment term</label>
+                        <input type="text" class="form-control" id="quo_payment" placeholder="Freight payment term">
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                    
+                  
+                </div>
+                <div style="margin-top: 10px;">
+                  <button class="btn btn-primary" id="add_pol_pod_btn">Add POL/POD</button>
+                </div>
+
+                <div id="pol_pod" style="border-width: 1px;border-style: solid;margin-top: 10px;">
+                  
+                </div>
+
+                <div style="margin-top: 10px;">
+                  <button class="btn btn-primary" id="add_fac_charge_btn">Add FAC Charge</button>
+                </div>
+
+                <div id="fac_charge" style="border-width: 1px;border-style: solid;margin-top: 10px;">
+                  
+                </div>
+
+                <div style="margin-top: 10px;">
+                  <button class="btn btn-primary" id="add_local_charge_btn">Add Local Charge</button>
+                </div>
+
+                <div id="local_charge" style="border-width: 1px;border-style: solid;margin-top: 10px;">
+                  
+                </div>
+
+                <div style="margin-top: 10px;">
+                  <button class="btn btn-primary" id="add_customs_clearance_btn">Add CUSTOMS CLEARANCE</button>
+                </div>
+
+                <div id="customs_clearance" style="border-width: 1px;border-style: solid;margin-top: 10px;">
+                  
+                </div>
+              </div>
+
+              <div id="file" class="container tab-pane fade">
+                <h3>Files</h3>
+                  <div class="row">
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Invoice Admin File</label>
+                        <button class="btn btn-primary form-control">Invoice Admin File</button>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">RECEIPT</label>
+                        <button class="btn btn-primary form-control">RECEIPT</button>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-1">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">RECEIPT / TAX</label>
+                        <button class="btn btn-primary form-control">RECEIPT / TAX</button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
             </div>
+
           </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button id="del-task" data-toggle="modal" data-target="#modal-delete" type="button" class="btn btn-danger">Delete Task</button>
-          <button id="save-task" type="button" class="btn btn-primary">Save Task</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete Task</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Are you sure to delete this task?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="confirm-del" class="btn btn-danger">Delete</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="del-task" data-toggle="modal" data-target="#modal-delete" type="button"
+              class="btn btn-danger">Delete Task</button>
+            <button id="save-task" type="button" class="btn btn-primary">Save Task</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure to delete this task?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="confirm-del" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Page level custom scripts-->
-  <script src="js/main.js"></script>
-  <script src="js/work.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page level custom scripts-->
+    <script src="js/main.js"></script>
+    <script src="js/work.js"></script>
 
 </body>
 
